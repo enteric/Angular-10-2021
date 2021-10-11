@@ -1,0 +1,10 @@
+<div *ngIf="lisatud">Lisati ostukorvi</div>
+
+<div *ngFor="let ese of esemed" class="item">
+    <div>{{ese.pealkiri}}</div>
+    <div>{{ ese.hind}} </div>
+    <!--<div>{{ese.hind}}</div>-->
+    <div></div>
+    <img src="assets/Webshio.png" alt="">
+    <button (click)="ostukorviLisamine()">Lisa ostukorvi</button>
+</div>
