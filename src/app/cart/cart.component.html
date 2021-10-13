@@ -1,0 +1,15 @@
+<button *ngIf="cartItems.length > 0" (click)="emptyCart()">Tühjenda ostukorv</button>
+
+<div *ngIf="cartItems.length == 0">
+    <div>Ostukorv on tühi</div>
+    <img src="" alt="">
+</div>
+
+<div *ngFor="let cartItem of cartItems" class="item">
+    <div>{{ cartItem.pealkiri }}</div>
+    <div>{{ cartItem.hind }} </div>
+    <img src="assets/Webshio.png" alt="">
+    <button (click)="deleteItemFromCart(cartItem)">X</button>>
+</div>
+
+<div *ngIf="cartItems.length > 0">Ostukorvi kogusumma on {{ sumOfCart }} €</div>

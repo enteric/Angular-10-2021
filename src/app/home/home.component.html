@@ -3,8 +3,7 @@
 <div *ngFor="let ese of esemed" class="item">
     <div>{{ese.pealkiri}}</div>
     <div>{{ ese.hind}} </div>
-    <!--<div>{{ese.hind}}</div>-->
     <div></div>
     <img src="assets/Webshio.png" alt="">
-    <button (click)="ostukorviLisamine()">Lisa ostukorvi</button>
+    <button (click)="ostukorviLisamine(ese)">Lisa ostukorvi</button>
 </div>

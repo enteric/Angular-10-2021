@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,36 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  pealkiri1 = "Ese1";
-  pealkiri2 = "Ese2";
-  pealkiri3 = "Ese3";
+  // koolon annab tüübi, ükskõik mis massiiv on tüübiks
+  // võrdusmärgiga annan väärtust
+  cartItems: any[] = [];
 
-  hind1 = 10;
-  hind2 = 20;
-  hind3 = 30;
+  sumOfCart = 0;
 
-  aktiivne1= true;
-  aktiivne2= false;
-  aktiivne3= true;
 
-  pealkirjad = ["Ese1", "Ese2", "Ese3"];
-  hinnad = [10,25,40];
-  aktiivsused = [true, false, true];
-
-  Ese1 = {pealkiri: "Ese1", hind: 10, aktiivne: true}
-  Ese2 = {pealkiri: "Ese2", hind: 25, aktiivne: false}
-  Ese3 = {pealkiri: "Ese3", hind: 40, aktiivne: true}
-
-  esemed = [
-    {pealkiri: "Ese1", hind: 10, aktiivne: true},
-    {pealkiri: "Ese2", hind: 25, aktiivne: false},
-    {pealkiri: "Ese3", hind: 40, aktiivne: true},
-  ]
-  
-
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.cartItems = this.cartService.cartItemsInService
+    this.sumOfCart = 0;
+    this.cartItems.forEach(item => this.sumOfCart = this.sumOfCart + item.hind)
+
   }
+
+  deleteItemFromCart(cartItem: any) {
+    let index = this.cartService.cartItemsInService.indexOf(cartItem);
+    this.cartService.cartItemsInService.splice(index,1);
+    this.sumOfCart = 0;
+    this.cartItems.forEach(item => this.sumOfCart = this.sumOfCart + item.hind)
+  }
+
+  emptyCart() {
+    this.cartService.cartItemsInService = [];
+    this.cartItems = this.cartService.cartItemsInService;
+    this.sumOfCart = 0;
+    this.cartItems.forEach(item => this.sumOfCart = this.sumOfCart + item.hind)
+  }
+
 
 }
