@@ -18,3 +18,9 @@
 .menu-button {
     cursor: pointer;
 }
+.admin-button {
+  cursor: pointer;
+  height: 30px;
+  margin: 50px;
+  
+}

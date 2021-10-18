@@ -19,6 +19,8 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartItems = this.cartService.cartItemsInService
     this.sumOfCart = 0;
+    // sum of carti väärtuseks 0
+    // title: [{"Ese1", price:100, "Ese2", price:100, "Ese3", price:100}].forEach
     this.cartItems.forEach(item => this.sumOfCart = this.sumOfCart + item.hind)
 
   }
