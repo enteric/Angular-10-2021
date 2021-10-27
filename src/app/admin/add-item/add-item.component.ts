@@ -13,9 +13,12 @@ export class AddItemComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(form: any) {
+    if (form.valid) {
     console.log(form.value)
     this.itemService.itemsInService.push(form.value);
+    }
+  
+  console.log("VAJUTASID NUPPU")
   }
-
 
 }
