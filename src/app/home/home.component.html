@@ -1,9 +1,8 @@
 <div *ngIf="lisatud">Lisati ostukorvi</div>
 
 <div *ngFor="let ese of esemed" class="item">
-    <div>{{ese.pealkiri}}</div>
-    <div>{{ ese.hind}} </div>
-    <div></div>
-    <img src="assets/Webshio.png" alt="">
-    <button (click)="ostukorviLisamine(ese)">Lisa ostukorvi</button>
+    <div>{{ese.title}}</div>
+    <div>{{ese.price}}</div>
+    <img routerLink="ese/{{ese.title}}" src="{{ese.imgSrc}}" alt="">
+    <button (click)="ostukorviLisamine(ese)">Lisa ostukorvi</button><br><br>
 </div>

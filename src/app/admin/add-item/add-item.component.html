@@ -1,0 +1,14 @@
+<!-- formi põhi on see  (formA ja enter)-->
+<form (ngSubmit)="onSubmit(addItemForm)" #addItemForm="ngForm">
+    <label>Eseme nimetus</label><br>
+    <input ngModel name="title" type="text"><br>
+    <label>Eseme hind</label><br>
+    <input ngModel name="price" type="number"><br>
+    <label>Eseme pilt</label><br>
+    <input ngModel name="imgSrc" type="text"><br>
+    <label>Eseme kategooria</label><br>
+    <input ngModel name="category" type="text"><br>
+    <label>Ese aktiivne</label><br>
+    <input ngModel name="activity" type="checkbox"><br>
+    <button>Lisa ese</button>
+</form>
