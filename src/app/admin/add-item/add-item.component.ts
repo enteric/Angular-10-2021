@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/services/category.service';
 import { ItemService } from 'src/app/services/item.service';
 
 @Component({
@@ -8,17 +9,22 @@ import { ItemService } from 'src/app/services/item.service';
 })
 export class AddItemComponent implements OnInit {
 
-  // siin ühendus itemService-ga
-  constructor(private itemService: ItemService) { }
+  categories: any[] = [];
+// siin ühendus itemService'ga
+  constructor(private itemService: ItemService, private categoryService: CategoryService) { }
+
 
   ngOnInit(): void {
+    this.categories = this.categoryService.categoriesInService
   }
 
   onSubmit(form: any) {
-    console.log(form.value);
-    console.log(form);
+    if (form.valid) {
+    console.log(form.value)
     this.itemService.itemsInService.push(form.value);
+    }
+  
+  console.log("VAJUTASID NUPPU")
   }
-  // siia teeme sisestuse funktsiooni
-  // ja pushime service-i sisse uue eseme
+
 }

@@ -1,22 +1,26 @@
 .navbar {
-  height: 150px;
-  background-color: blanchedalmond;
-  /* display: flex --- asjad on vasakult paremale
-  justify-content: space-between; --- ruum asetub asjade keskele */
-  display: flex;
-  justify-content: space-between;
+    height: 150px;
+    color: #ca410b;
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: space-between;
 }
 
-/* .logo {
-  cursor: pointer;
-} */
-
-.cart-button {
+.logo {
+     height: 50px;
+     margin: 50px;
+}
+.cart-button{
   height: 50px;
   margin: 50px;
   /* cursor: pointer; */
 }
-
 .menu-button {
+    cursor: pointer;
+}
+.admin-button {
   cursor: pointer;
+  height: 30px;
+  margin: 50px;
+  
 }

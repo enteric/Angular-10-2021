@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from 'src/app/services/item.service';
 
+
 @Component({
   selector: 'app-view-items',
   templateUrl: './view-items.component.html',
@@ -9,15 +10,19 @@ import { ItemService } from 'src/app/services/item.service';
 export class ViewItemsComponent implements OnInit {
   items: any[] = [];
 
+  
   constructor(private itemService: ItemService) { }
+
+  
 
   ngOnInit(): void {
     this.items = this.itemService.itemsInService;
   }
-
   onDeleteItem(item: any) {
     let index = this.itemService.itemsInService.indexOf(item);
     this.itemService.itemsInService.splice(index,1);
+   // this.sumOfCart = 0;
+   // this.cartItems.forEach(item => this.sumOfCart = this.sumOfCart + item.hind)
   }
 
 }

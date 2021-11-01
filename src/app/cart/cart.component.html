@@ -1,17 +1,15 @@
 <button *ngIf="cartItems.length > 0" (click)="emptyCart()">Tühjenda ostukorv</button>
 
-<!-- == 0 -->
-<!-- ngIf - kas näitab või ei näita, vastavalt kas on true/false -->
 <div *ngIf="cartItems.length == 0">
-  <div>Ostukorv on tühi</div>
-  <img src="assets/empty-cart.png" alt="">
+    <div>Ostukorv on tühi</div>
+    <img src="" alt="">
 </div>
 
 <div *ngFor="let cartItem of cartItems" class="item">
-  <div>{{ cartItem.title }}</div>
-  <div>{{ cartItem.price }}</div>
-  <img src="{{ cartItem.imgSrc }}" alt="">
-  <button (click)="deleteItemFromCart(cartItem)">X</button>
+    <div>{{ cartItem.title }}</div>
+    <div>{{ cartItem.price }}</div>
+    <img src="{{ cartItem.imgSrc }}" alt="tooted">
+    <button (click)="deleteItemFromCart(cartItem)">X</button>>
 </div>
 
 <div *ngIf="cartItems.length > 0">Ostukorvi kogusumma on {{ sumOfCart }} €</div>
